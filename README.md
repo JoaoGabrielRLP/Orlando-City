@@ -1,4 +1,4 @@
 # Orlando-City
-Proejto temático com base no nesse time - primeiro projeto do curso udemy desenvolvedor web
+Projeto temático com base no time Orlando City - primeiro projeto do curso udemy desenvolvedor web
 
 
