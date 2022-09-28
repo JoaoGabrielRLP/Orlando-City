@@ -13,10 +13,10 @@
 				<div class="row text-center">
 					<h2>Latest News</h2>
 					<hr>	
-				</div>	
+				</div>				
 				
 				<button type="button" id="btn-news-prev"><i class="fa fa-angle-left"></i></button>
-				<button type="button" id="btn-news-next"><i class="fa fa-angle-right"></i></i></button>
+				<button type="button" id="btn-news-next"><i class="fa fa-angle-right"></i></button>
 
 				<div class="row thumbnails">
 					<div class="item">
@@ -131,6 +131,4 @@
 
 		</section>
 
-		<?php include_once("footer.php");?>
-	</body>
-</html>
+<?php include_once("footer.php");?>

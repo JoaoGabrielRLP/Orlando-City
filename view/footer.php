@@ -51,32 +51,29 @@
 									</address>
 
 									<p class="hidden-xs"><a href="tel:1855ORLCITY"><i class="fa fa-phone"></i>1.855.ORL.CITY</a></p>
-
+									
 									<div class="row-fluid visible-xs">
-
 										<div class="col-xs-6">
-											<a href="" class="btn btn-footer"><i class="fa fa-map-marker"></i>Location</a>
+											<a href="#" class="btn btn-footer "><i class="fa fa-map-marker"></i>Location</a>
 										</div>
-
 										<div class="col-xs-6">
-											<a href="" class="btn btn-footer"><i class="fa fa-phone"></i>Call</a>
+											<a href="#" class="btn btn-footer"><i class="fa fa-phone"></i>Call</a>
 										</div>
 									</div>
 
 									<ul class="list-unstyled list-socials">
 										<li>
-											<a href="#"><i class="fa fa-facebook"></i></a>
+											<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
 										</li>
 										<li>
-											<a href="#"><i class="fa fa-twitter"></i></a>
+											<a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
 										</li>
 										<li>
-											<a href="#"><i class="fa fa-instagram"></i></a>
+											<a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
 										</li>
 										<li>
-											<a href="#"><i class="fa fa-pinterest-p"></i></a>
+											<a href="#" target="_blank"><i class="fa fa-pinterest-p"></i></a>
 										</li>
-
 										<li class="page-up">
 											<a href="#" id="page-up"><i class="fa fa-chevron-up"></i></a>
 										</li>
@@ -98,7 +95,7 @@
 				<div class="container copyright-mobile">
 					
 					<p class="pull-left">Copyright © Orlando City Soccer 2016. All rights reserved.</p>
-					<p class="pull-right text-roxo">Created by João Gabriel in Udemy</p>
+					<p class="pull-right text-roxo">Created by HCODE in Udemy</p>
 
 				</div>
 
@@ -106,8 +103,11 @@
 
 		</footer>
 
-        <script src="lib/jquery/jquery.min.js"></script>
+		<script src="lib/jquery/jquery.min.js"></script>
 		<script src="lib/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
 		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<script src="lib/raty/lib/jquery.raty.js"></script>
 		<script src="js/efeitos.js"></script>
-		<script src="https://kit.fontawesome.com/c366cca3a4.js" crossorigin="anonymous"></script>
+
+	</body>
+</html>

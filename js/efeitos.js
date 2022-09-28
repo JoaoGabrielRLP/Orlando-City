@@ -43,7 +43,7 @@ $(document).ready(function(){
 
   	$("#page-up").on("click", function(event){
 
-  		$("html").animate({
+  		$("body").animate({
   			scrollTop:0
   		}, 1000);
 
@@ -51,24 +51,24 @@ $(document).ready(function(){
 
   	});
 
-    $("#btn-bars").on("click", function(){
+  	$("#btn-bars").on("click", function(){
 
-      $("header").toggleClass("open-menu");
+  		$("header").toggleClass("open-menu");
 
-    });
+  	});
 
-    $("#menu-mobile-mask, .btn-close").on("click", function(){
+  	$("#menu-mobile-mask, .btn-close").on("click", function(){
 
-      $("header").removeClass("open-menu");
+  		$("header").removeClass("open-menu");
 
 
-    });
+  	});
 
-    $("#btn-search").on("click", function(){
+  	$("#btn-search").on("click", function(){
 
-      $("header").toggleClass("open-search");
-      $("#input-search-mobile").focus();
+  		$("header").toggleClass("open-search");
+  		$("#input-search-mobile").focus();
 
-    });
+  	});
 
 });

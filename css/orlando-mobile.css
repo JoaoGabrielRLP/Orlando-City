@@ -11,7 +11,7 @@
 	}
 	header #logotipo {
 		left: 32%;
-		z-index: 10;		
+		z-index: 10;
 		transition: 1s;
 	}
 	header.open-menu #logotipo {
@@ -252,7 +252,7 @@
 		color: #fff;
 		outline: 0;
 	}
-	header.open-search #input-search-mobile {		
+	header.open-search #input-search-mobile {
 		top: 0;
 	}
 	header.open-search #logotipo {
