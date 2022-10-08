@@ -95,7 +95,7 @@
 				<div class="container copyright-mobile">
 					
 					<p class="pull-left">Copyright © Orlando City Soccer 2016. All rights reserved.</p>
-					<p class="pull-right text-roxo">Created by HCODE in Udemy</p>
+					<p class="pull-right text-roxo">Created by João Gabriel</p>
 
 				</div>
 
