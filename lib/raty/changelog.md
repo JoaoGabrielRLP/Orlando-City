@@ -1,71 +1,25 @@
-## v3.1.1
+# jQuery Raty - A Star Rating Plugin - http://wbotelhos.com/raty
 
-### Bugfix
+## The Winter is coming...
 
-- Fix invalid Bower JSON; [#232](https://github.com/wbotelhos/raty/pull/232) by [Nimmer](https://github.com/Nimmer)
+### Fixes
 
-## v3.1.0
-
-### News
-
-- Adds `iconRangeSame` option where the previous stars will be the same as the selected one; [#135](https://github.com/wbotelhos/raty/issues/135) by [viniciusjl](https://github.com/viniciusjl)
-
-### Update
-
-- Adds CSS, Images and Fonts to Bower; [#161](https://github.com/wbotelhos/raty/pull/161) by [juriejan](https://github.com/juriejan)
-
-## v3.0.0
-
-### Break Change
-
-- Function `destroy` was removed;
-- Function `reload` was removed;
-- Function `set` was removed;
-- Functions now is accessed via `element.data('raty').FUNCTION_NAME()`;
-- Option `cancel` was renamed to `cancelButton`;
-
-### Bugfix
-
-- When using `single` options the click was not turning the star on; [#155](https://github.com/wbotelhos/raty/pull/155) by [henrikhannemose](https://github.com/henrikhannemose)
-
-### Update
-
-- Grammars fixes; [#217](https://github.com/wbotelhos/raty/pull/217) by [tfantina](https://github.com/tfantina)
-- All the code were migrated to pure Prototype. Vanilla JS coming soon!;
-
-## v2.9.0
-
-### Update
-
-+ Drops `engines` from `package.json` for a greater flexibility;
-
-## v2.8.0
-
-### News
-
-+ Add support to configure options via `$.data()`;
-
-## v2.7.1
-
-### Bugfix
-
-+ Fix `readOnly` when using fonts; (Amaia Baigorri)
+### Changes
 
 ### News
 
 + Added Bower package; (yadhu)
-+ Added `path` options as callback; (tyler-king)
 
-## v2.7.0
+## 2.7.0
 
-### Bugfix
+### Fixes
 
 + Function `move` was losing precision with float with more then one digit;
 + Function `move` was losing the saved `options` data;
 + With `half` enable, mousemove was not changing to full star after 0.5 point;
 + With `half` enable, score field was receiving precision value. (reported by hoangnham01)
 
-### Update
+### Changes
 
 + If you returns `false` into `click` callback, the action will be prevented;
 + When `precision` is on it won't force `targetType` to be `score` anymore.
@@ -74,16 +28,16 @@
 
 + Added support to float `hints`;
 
-## v2.6.0
+## 2.6.0
 
-### Bugfix
+### Fixes
 
 + Target was not showing the score when `half` was enabled; (andersonba)
 + Fixed some JS Lint warnings; (Qazzian)
 + Cancel button `mouseleave` must yiels no score as `undefined` not `null`;
 + The `numberMax` now sets the stars between 1...`numberMax` instead 0...`numberMax`.
 
-### Update
+### Changes
 
 + `path` now is `undefined` by default;
 + The {score} placeholder on `targetFormat` option is no longer mandatory;
@@ -100,13 +54,13 @@
 + Option `target` accepts callback;
 + Added option `cancelClass` to choose the class name for cancel button.
 
-## v2.5.2
+## 2.5.2
 
-### Bugfix
+### Fixes
 
 The read-only indicator was not removing after the reset of configuration, blocking the `click` and `score` functions.
 
-## v2.5.1
+## 2.5.1
 
 ### News
 
@@ -116,7 +70,7 @@ The read-only indicator was not removing after the reset of configuration, block
 + The `readOnly` and `scoreName` option can be setted via callback; (aprimadi)
 + You can avoid the width style setting the option `width` to false.
 
-### Update
+### Changes
 
 + Extracted the limit of stars to the option `numberMax`;
 + The `hints` options can receives three values:
@@ -130,7 +84,7 @@ The read-only indicator was not removing after the reset of configuration, block
 + When `precision` is enabled, `half` becomes enabled and `targetType` is changed to 'score';
 + When `readOnly` is true, the cursor style will be removed instead to use the default.
 
-### Bugfix
+### Fixes
 
 + The `click` function was not yielding the event.
 + The `path` always was prepend avoiding absolute or different path for each icon;
@@ -140,7 +94,7 @@ The read-only indicator was not removing after the reset of configuration, block
 + The `set` function now is chainable.
 + The `targetKeep` was keepping the template even without score;
 
-## v2.4.5
+## 2.4.5
 
 + Now the error messages is displayed in place of stars to be more visible;
 + Fixed the 'score' function to handle undefined score when we have no vote;
@@ -150,7 +104,7 @@ The read-only indicator was not removing after the reset of configuration, block
 + Fixed functions that was not applying not continuing to apply if someone was invalid;
 + Fixed the flag that indicates read-only or not.
 
-## v2.4.0
+## 2.4.0
 
 + Added the function 'reload' to reload the rating with the current configuration;
 + Added the function 'set' to reload the rating applying new configurations;
@@ -161,7 +115,7 @@ The read-only indicator was not removing after the reset of configuration, block
 + Now attribute 'start' is called as 'score' to make more sense;
 + Now the method 'start' is called as 'score' too.
 
-## v2.1.0
+## 2.1.0
 
 + Now Raty keeps the state of the elements and no longer depends on ID for each one:
 	- The score no longer has ID;
@@ -169,7 +123,7 @@ The read-only indicator was not removing after the reset of configuration, block
 	- The stars images no longer has class.
 + Added function 'score' to recover the current score.
 
-## v2.0.0
+## 2.0.0
 
 + Added option 'halfShow' to just display and separate from the option to vote 'half';
 + Added option 'targetText' to choose default value when there is no score or targetKepp is off;
@@ -196,13 +150,13 @@ The read-only indicator was not removing after the reset of configuration, block
 + Now we using the best pratice to build the plugin;
 + Now the plugin is under test with Jasmine and Jasmine jQuery.
 
-## v1.4.3
+## 1.4.3
 
 + Now public function return the context to be able the chaining;
 + Fixed: the option 'readOnly' brokes the plugin;
 + Prevented the processing of the set of classes in public function.
 
-## v1.4.0
+## 1.4.0
 
 + Added attribute 'target' to choose a element to display the score when the mouse is on the star;
 + Added attribute 'targetKeep' to keep the selected value on the target element;
@@ -213,53 +167,53 @@ The read-only indicator was not removing after the reset of configuration, block
 + Now is possible pass a empty string in the $.fn.raty.start() to cancel the rating;
 + Public functions without specify ID or class is no longer supported.
 
-## v1.3.3
+## 1.3.3
 
 + Fixed the icon presentation when the start attribute is setted and the iconRange is enabled;
 + Now the click function receives the event as argument. (Eric Wendelin)
 
-## v1.3.2
+## 1.3.2
 
 + Fixed: the last Raty configuration will not be applied in others targets Raty anymore;
 + Now is possible to use the element as identifier like div.star on direct actions.
 
-## v1.3.0
+## 1.3.0
 
 + Added attribute size for to choose the size of the icons that will be used;
 + Added attribute width for to choose the container width of the stars;
 + Changed the name of the attribute showCancel to just cancel.
 
-## v1.2.1
+## 1.2.1
 
 + Fixed half star when click function is enabled.
 
-## v1.2.0
+## 1.2.0
 
 + Added support to half star selection;
 + Changed the name of the attribute onClick to just click;
 + Changed the name of the attribute showHalf to half, because of the selection support.
 
-## v1.0.1
+## 1.0.1
 
 + Fixed the ID's auto generation to work in IE6 and IE7.
 
-## v1.0.0
+## 1.0.0
 
 + Now you can pass a optionally ID or a class to be the target of the public function's actions;
 + Fixed the read-only that wasn't begin applied by the public function readOnly.
 
-## v0.9
+## 0.9
 
 + Improved the selector to accept bind by class name;
 + Now if you don't pass a ID for the element, then it will be created;
 + Now the hint list will be applied even if the quantity are less than the stars.
 
-## v0.8
+## 0.8
 
 + Added iconRange attribute. Now you can set custom icons for especific ranges;
 + Fixed the cancel button that didn't hidden when using the public function readOnly.
 
-## v0.7
+## 0.7
 
 + Added noRatedMsg attribute. A hint for no rated elements when it's read-only;
 + Avoided negative star number in public function start;
@@ -267,7 +221,7 @@ The read-only indicator was not removing after the reset of configuration, block
 + Fixed the public function start when the star are read-only and is not passed a start value;
 + Fixed the half star function on it is made by public function start.
 
-## v0.6
+## 0.6
 
 + Now you can use the key "this" to refer the star element itself in the onClick handler;
 + Fixed the reference context when using public functions or local functions;
@@ -275,7 +229,7 @@ The read-only indicator was not removing after the reset of configuration, block
 + Avoided negative star number;
 + Avoided more than 20 stars. But it's can be changed in the script if you need.
 
-## v0.5
+## 0.5
 
 + Now you can put a cancel button to cancel your rating;
 + Choose the cancel image off;
@@ -283,21 +237,21 @@ The read-only indicator was not removing after the reset of configuration, block
 + Choose the left or right side position for the cancel button;
 + Change the hint of the cancel button.
 
-## v0.4
+## 0.4
 
 + Added support to display half star.
 
-## v0.3
+## 0.3
 
 + Fixed some mistakes to work on IE browser.
 
-## v0.2
+## 0.2
 
 + Added the public function click, that do the click on a star;
 + Was removed the execution of the onClick when used the function start;
 + Added onClick function that enable a callback when a star is clicked.
 
-## v0.1
+## 0.1
 
 + Change the path of images;
 + Change the name image files;

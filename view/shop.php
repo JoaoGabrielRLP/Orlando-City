@@ -24,7 +24,7 @@
 						<div class="text-parcelas text-arial-cinza">ou em até {{produto.parcelas}}x de R$ {{produto.parcela}}</div>
 						<div class="text-total text-arial-cinza">total a prazo R$ {{produto.total}}</div>	
 					</div>
-					<a href="#" class="btn btn-comprar text-roxo"><i class="fa fa-shopping-cart"></i> compre agora</a>
+					<a href="carrinhoAdd-{{produto.id_prod}}" class="btn btn-comprar text-roxo"><i class="fa fa-shopping-cart"></i> compre agora</a>
 				</div>
 
 			</div>
@@ -34,65 +34,69 @@
 		<button type="button" id="btn-destaque-prev"><i class="fa fa-angle-left"></i></button>
 		<button type="button" id="btn-destaque-next"><i class="fa fa-angle-right"></i></button>
 
-	</div>	
+	</div>
 
 	<div id="promocoes" class="container">
-
+		
 		<div class="row">
 			<div class="col-md-2">
+				
 				<div class="box-promocao box-1">
-					<p>Escolha por desconto</p>
+					<p>escolha por desconto</p>
 				</div>
-			</div>
 
+			</div>
 			<div class="col-md-10">
+				
 				<div class="row-fluid">
 					<div class="col-md-3">
 						<div class="box-promocao">
-							<div class="text-ate">Até</div>
+							<div class="text-ate">até</div>
 							<div class="text-numero">40</div>
 							<div class="text-porcento">%</div>
-							<div class="text-off">Off</div>
+							<div class="text-off">off</div>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="box-promocao">
-						<div class="text-ate">Até</div>
+							<div class="text-ate">até</div>
 							<div class="text-numero">60</div>
 							<div class="text-porcento">%</div>
-							<div class="text-off">Off</div>
+							<div class="text-off">off</div>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="box-promocao">
-						<div class="text-ate">Até</div>
+							<div class="text-ate">até</div>
 							<div class="text-numero">80</div>
 							<div class="text-porcento">%</div>
-							<div class="text-off">Off</div>
+							<div class="text-off">off</div>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="box-promocao">
-						<div class="text-ate">Até</div>
+							<div class="text-ate">até</div>
 							<div class="text-numero">85</div>
 							<div class="text-porcento">%</div>
-							<div class="text-off">Off</div>
+							<div class="text-off">off</div>
 						</div>
 					</div>
 				</div>
-			</div>	
+
+			</div>
 		</div>
 
 	</div>
 
 	<div id="mais-buscados" class="container">
-
+		
 		<div class="row text-center title-default-roxo">
-			<h2>Os mais buscados</h2>
+			<h2>os mais buscados</h2>
 			<hr>	
-		</div>	
+		</div>
 
-		<div class="row"> 
+		<div class="row">
+			
 			<div class="col-md-3" ng-repeat="produto in buscados">
 				<div class="box-produto-info">
 					<a href="produto-{{produto.id_prod}}">
@@ -104,7 +108,9 @@
 						<div class="text-parcelado text-arial-cinza">{{produto.parcelas}}x de R$ {{produto.parcela}} sem juros</div>
 					</a>
 				</div>
+
 			</div>
+
 		</div>
 
 	</div>
@@ -114,68 +120,141 @@
 <?php include_once("footer.php");?>
 
 <script>
-	angular.module("shop", []).controller("destaque-controller", function($scope, $http){
-		$scope.produtos = [];
-		$scope.buscados = [];
+angular.module("shop", []).controller("destaque-controller", function($scope, $http){
 
-		var initCarousel = function(){
-			$("#destaque-produtos").owlCarousel({
-			autoPlay: 5000,
-			items:1,
-			singleItem: true
-			});
+	$scope.produtos = [];
+	$scope.buscados = [];
 
-			var owlDestaque = $("#destaque-produtos").data('owlCarousel');
+	var initCarousel = function(){
 
-			$("#btn-destaque-prev").on("click", function(){
-				owlDestaque.prev();
-			});
+		$("#destaque-produtos").owlCarousel({
+	 
+	      autoPlay: 5000,
+	      items : 1,
+	      singleItem: true
+	 
+	  	});
 
-			$("#btn-destaque-next").on("click", function(){
-				owlDestaque.next();
-			
-			});
-		}
+	  	var owlDestaque = $("#destaque-produtos").data('owlCarousel');
 
-		// Simple GET request example:
-		$http({
-  			method: 'GET',
-  			url: 'produtos'
-		}).then(function successCallback(response) {
-			$scope.produtos = response.data;
-			setTimeout(initCarousel, 100);
+	  	$('#btn-destaque-prev').on("click", function(){
 
-  		}, 
-		
-		function errorCallback(response) {
-    
-  		});
+	  		owlDestaque.prev();
 
-		var initEstrelas = function(){
+	  	});
 
-			$('.estrelas').each(function(){
-				$(this).raty({
-				starHalf: 'lib/raty/lib/images/star-half.png',
-				starOff: 'lib/raty/lib/images/star-off.png',
-				starOn: 'lib/raty/lib/images/star-on.png',
-				score: $(this).data("score")
-				});
-			});
-		}
+	  	$('#btn-destaque-next').on("click", function(){
 
-		  $http({
-  			method: 'GET',
-  			url: 'produtos-mais-buscados'
-		}).then(function successCallback(response) {
-			$scope.buscados = response.data;
-			setTimeout(initEstrelas, 100);
+	  		owlDestaque.next();
 
-  		}, 
-		
-		function errorCallback(response) {
-    
-  		});
+	  	});
 
-	});
+	};
 
+	$http({
+	  method: 'GET',
+	  url: 'produtos'
+	}).then(function successCallback(response) {
+
+	    $scope.produtos = response.data;
+
+	    setTimeout(initCarousel, 1000);
+
+	  }, function errorCallback(response) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	  });
+
+	$http({
+	  method: 'GET',
+	  url: 'produtos-mais-buscados'
+	}).then(function successCallback(response) {
+
+	    $scope.buscados = response.data;
+
+	  }, function errorCallback(response) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	  });
+
+	
+
+});
+angular.module("shop", []).controller("destaque-controller", function($scope, $http){
+
+	$scope.produtos = [];
+	$scope.buscados = [];
+
+	var initCarousel = function(){
+
+		$("#destaque-produtos").owlCarousel({
+	 
+	      autoPlay: 5000,
+	      items : 1,
+	      singleItem: true
+	 
+	  	});
+
+	  	var owlDestaque = $("#destaque-produtos").data('owlCarousel');
+
+	  	$('#btn-destaque-prev').on("click", function(){
+
+	  		owlDestaque.prev();
+
+	  	});
+
+	  	$('#btn-destaque-next').on("click", function(){
+
+	  		owlDestaque.next();
+
+	  	});
+
+	};
+
+	$http({
+	  method: 'GET',
+	  url: 'produtos'
+	}).then(function successCallback(response) {
+
+	    $scope.produtos = response.data;
+
+	    setTimeout(initCarousel, 1000);
+
+	  }, function errorCallback(response) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	  });
+
+	var initEstrelas = function(){
+
+		$('.estrelas').each(function(){
+
+	  		$(this).raty({
+		  		starHalf    : 'lib/raty/lib/images/star-half.png',                                // The name of the half star image.
+				starOff     : 'lib/raty/lib/images/star-off.png',                                 // Name of the star image off.
+				starOn      : 'lib/raty/lib/images/star-on.png',
+				score		: parseFloat($(this).data("score"))
+		  	});
+
+	  	});
+
+	};
+
+	$http({
+	  method: 'GET',
+	  url: 'produtos-mais-buscados'
+	}).then(function successCallback(response) {
+
+	    $scope.buscados = response.data;
+
+	    setTimeout(initEstrelas, 1000);
+
+	  }, function errorCallback(response) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	  });
+
+	
+
+});
 </script>

@@ -24,7 +24,7 @@
 			<div id="menu-mobile" class="visible-xs">
 				
 				<ul class="list-unstyled">
-					<li><a href="index.php">Home</a></li>
+					<li><a href="index">Home</a></li>
 					<li><a href="videos">Videos</a></li>
 					<li><a href="#">Tickets</a></li>
 					<li><a href="#">News</a></li>
@@ -86,7 +86,7 @@
 					
 					<nav id="menu" class="pull-right">
 						<ul>
-							<li><a href="index.php">Home</a></li>
+							<li><a href="index">Home</a></li>
 							<li><a href="videos">Videos</a></li>
 							<li><a href="#">Tickets</a></li>
 							<li><a href="#">News</a></li>

@@ -27,21 +27,21 @@
 					<td class="col-xs-2">
 						<div class="input-group">
 					      <span class="input-group-btn">
-					        <button class="btn text-roxo" ng-click="addQtd(produto)" type="button"><i class="fa fa-chevron-down"></i></button>
+					        <button class="btn text-roxo" ng-click="removeQtd(produto)" type="button"><i class="fa fa-chevron-down"></i></button>
 					      </span>
-					      <input type="text" class="form-control" ng-model="produto.qtd">
+					      <input type="text" class="form-control" ng-model="produto.qtd_car">
 					      <span class="input-group-btn">
-					        <button class="btn text-roxo" ng-click="removeQtd(produto)" type="button"><i class="fa fa-chevron-up"></i></button>
+					        <button class="btn text-roxo" ng-click="addQtd(produto)" type="button"><i class="fa fa-chevron-up"></i></button>
 					      </span>
 					    </div>
 					</td>
 					<td class="text-center col-xs-2">
 						<p>Entrega para o<br/>CEP: {{carrinho.cep}}</p>
-						<strong class="text-roxo">{{produto.prazo}}</strong>
+						<strong class="text-roxo">{{carrinho.prazo}}</strong>
 					</td>
 					<td class="text-center">R$ {{produto.preco}}</td>
 					<td class="text-center">R$ {{produto.total}}</td>
-					<td class="text-center"><button class="btn text-roxo" type="button"><i class="fa fa-close"></i></button></td>
+					<td class="text-center"><button ng-click="removeAll(produto)" class="btn text-roxo" type="button"><i class="fa fa-close"></i></button></td>
 				</tr>
 			</tbody>
 		</table>
@@ -51,9 +51,9 @@
 				<div class="box-outline-grey">
 					<p style="margin:28px auto;">Simule o prazo de entrega e o frete para seu CEP abaixo:</p>
 					<div class="input-group col-xs-4" style="margin:0 auto;">
-				      <input type="text" class="form-control">
+				      <input type="text" class="form-control" ng-model="cep">
 				      <span class="input-group-btn">
-				      	<button class="btn btn-default" type="button">Calcular Frete</button>
+				      	<button class="btn btn-default" ng-click="calcularFrete(cep)" type="button">Calcular Frete</button>
 				      </span>
 				    </div>
 				</div>
@@ -100,8 +100,11 @@ angular.module("shop", []).controller("cart-controller", function($scope, $http)
 				cep:response.data.cep_car,
 				subtotal:response.data.subtotal_car,
 				frete:response.data.frete_car,
-				total:response.data.cep_car
-	};
+				total:response.data.total_car,
+				prazo:response.data.prazo_car+' dias úteis'
+			};
+
+			$scope.produtos = response.data.produtos;
 
 		}, function(response){
 
@@ -110,26 +113,6 @@ angular.module("shop", []).controller("cart-controller", function($scope, $http)
 		});
 
 	};
-
-	
-
-	$scope.produtos = [{
-		nome_prod_long:'Smartphone Motorola Moto X Play Dual',
-		preco:'1.500,99',
-		total:'1.500,99',
-		qtd:1,
-		foto_principal:'iphone.jpg',
-		prazo:'11 dias úteis',
-		id_prod:1
-	},{
-		nome_prod_long:'Smartphone Motorola Moto X Play Dual',
-		preco:'1.500,99',
-		total:'1.500,99',
-		qtd:1,
-		foto_principal:'iphone.jpg',
-		prazo:'10 dias úteis',
-		id_prod:2
-	}];
 
 	$scope.addQtd = function(_produto){
 
@@ -141,7 +124,7 @@ angular.module("shop", []).controller("cart-controller", function($scope, $http)
 			})
 		}).then(function(response){
 
-			console.log(response);
+			carregarCarrinho();
 
 		}, function(){
 
@@ -153,7 +136,55 @@ angular.module("shop", []).controller("cart-controller", function($scope, $http)
 
 	$scope.removeQtd = function(_produto){
 
+		$http({
+			method:'DELETE',
+			url:'carrinho-produto',
+			data:JSON.stringify({
+				id_prod:_produto.id_prod
+			})
+		}).then(function(response){
 
+			carregarCarrinho();
+
+		}, function(){
+
+
+
+		});
+
+	};
+
+	$scope.removeAll = function(_produto){
+
+		$http({
+			method:'DELETE',
+			url:'carrinhoRemoveAll-'+_produto.id_prod
+		}).then(function(response){
+
+			carregarCarrinho();
+
+		}, function(){
+
+
+
+		});
+
+	};
+
+	$scope.calcularFrete = function(_cep){
+
+		$http({
+			method:'GET',
+			url:'calcular-frete-'+_cep
+		}).then(function(response){
+
+			carregarCarrinho();
+
+		}, function(){
+
+
+
+		});
 
 	};
 
