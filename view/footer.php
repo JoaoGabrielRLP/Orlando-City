@@ -103,11 +103,122 @@
 
 		</footer>
 
+		<!-- Modal de Login -->
+		<div class="modal fade" id="modal-login" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Entrar</h4>
+					</div>
+					<form id="form-login">
+						<div class="modal-body">
+							<div id="login-mensagem" style="display:none; margin-bottom:15px;"></div>
+							<div class="form-group">
+								<label>E-mail</label>
+								<input type="email" class="form-control" id="login-email" required>
+							</div>
+							<div class="form-group">
+								<label>Senha</label>
+								<input type="password" class="form-control" id="login-senha" required>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-roxo">Entrar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal de Cadastro -->
+		<div class="modal fade" id="modal-cadastro" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Criar conta</h4>
+					</div>
+					<form id="form-cadastro">
+						<div class="modal-body">
+							<div id="cadastro-mensagem" style="display:none; margin-bottom:15px;"></div>
+							<div class="form-group">
+								<label>Nome</label>
+								<input type="text" class="form-control" id="cadastro-nome" required>
+							</div>
+							<div class="form-group">
+								<label>E-mail</label>
+								<input type="email" class="form-control" id="cadastro-email" required>
+							</div>
+							<div class="form-group">
+								<label>Senha</label>
+								<input type="password" class="form-control" id="cadastro-senha" required>
+							</div>
+							<div class="form-group">
+								<label>Confirmar senha</label>
+								<input type="password" class="form-control" id="cadastro-confirmar-senha" required>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-roxo">Cadastrar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal de Meus Pedidos -->
+		<div class="modal fade" id="modal-pedidos" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Meus Pedidos</h4>
+					</div>
+					<div class="modal-body" id="pedidos-corpo">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal de Editar Dados -->
+		<div class="modal fade" id="modal-perfil" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Editar Dados</h4>
+					</div>
+					<form id="form-perfil">
+						<div class="modal-body">
+							<div id="perfil-mensagem" style="display:none; margin-bottom:15px;"></div>
+							<div class="form-group">
+								<label>Nome</label>
+								<input type="text" class="form-control" id="perfil-nome" required>
+							</div>
+							<div class="form-group">
+								<label>E-mail</label>
+								<input type="email" class="form-control" id="perfil-email" required>
+							</div>
+							<div class="form-group">
+								<label>Nova senha (deixe em branco para não alterar)</label>
+								<input type="password" class="form-control" id="perfil-senha">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-roxo">Salvar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
 		<script src="lib/jquery/jquery.min.js"></script>
 		<script src="lib/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
 		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 		<script src="lib/raty/lib/jquery.raty.js"></script>
-		<script src="js/efeitos.js"></script>
+		<script src="js/efeitos.js?v=2"></script>
+		<script src="js/auth.js"></script>
 
 	</body>
 </html>

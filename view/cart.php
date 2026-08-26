@@ -203,9 +203,20 @@ angular.module("shop", []).controller("cart-controller", function($scope, $http)
 			url:'comprar'
 		}).then(function(response){
 
-			$scope.mensagemCompra = response.data.mensagem || 'Compra finalizada com sucesso!';
+			if (response.data.success) {
 
-			carregarCarrinho();
+				$scope.mensagemCompra = response.data.mensagem || 'Compra finalizada com sucesso!';
+				carregarCarrinho();
+
+			} else if (response.data.loginNecessario) {
+
+				$('#modal-login').modal('show');
+
+			} else {
+
+				$scope.mensagemCompra = response.data.message || 'Não foi possível finalizar a compra.';
+
+			}
 
 		}, function(response){
 

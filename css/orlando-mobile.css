@@ -1,21 +1,18 @@
 /*Tamanho padrão para tablets*/
-@media only screen and (max-width: 768px) {
-	.header-black ul {
+@media only screen and (max-width: 767px) {
+	#auth-nav {
 		display: none;
 	}
 }
 /*Tamanho padrão para smartphones*/
 @media only screen and (max-width: 480px) {
-	.header-black ul, #menu{
+	#menu{
 		display: none;
 	}
 	header #logotipo {
-		left: 32%;
+		left: 50%;
+		transform: translateX(-50%);
 		z-index: 10;
-		transition: 1s;
-	}
-	header.open-menu #logotipo {
-		transform: rotate(360deg);
 	}
 	#btn-bars, #btn-search {
 		color: #fff;
@@ -34,8 +31,7 @@
 	}
 	#banner {
 		height: 317px;
-		background-size: cover;
-		background-position: 0;
+		min-height: 0;
 		text-align: center;
 	}
 	#banner h1 {
@@ -177,6 +173,9 @@
 		width: 100%;
 		z-index: 9;
 	}
+	header.open-menu {
+		z-index: 100;
+	}
 	footer .page-up {
 		display: inline-block!important;
 	}
@@ -187,11 +186,13 @@
 		width: 80%;
 		height: 100%;
 		left:-80%;
+		overflow-x: hidden;
 		transition: 1s;
-		z-index: 5;
+		z-index: 101;
 	}
 	header.open-menu #menu-mobile {
 		left: 0;
+		z-index: 101;
 	}
 	header.open-menu #menu-mobile-mask {
 		position: fixed;
@@ -200,17 +201,37 @@
 		top: 0;
 		left: 0;
 		background-color: rgba(0,0,0,.5);
-		z-index: 4;
+		z-index: 100;
 	}
 	header.open-menu #logotipo {
-		position: fixed;
-		top: 50px;
-		height: 76px;
-		left: calc(40% - 33px);
+		display: none;
+	}
+	header.open-menu .menu-mobile-logo {
+		display: block;
+		width: 78px;
+		height: auto;
+		margin: 12px auto 0;
 	}
 	header.open-menu #menu-mobile ul {
 		margin: 20px;
-		margin-top: 100px;
+		margin-top: 18px;
+	}
+	header.open-menu #menu-mobile .mobile-auth-nav {
+		display: flex;
+		margin: 20px;
+		margin-top: 0;
+	}
+	header.open-menu #menu-mobile .mobile-auth-nav li {
+		border: 0;
+		width: 100%;
+	}
+	header.open-menu #menu-mobile .mobile-auth-nav .auth-guest {
+		display: flex;
+		gap: 8px;
+	}
+	header.open-menu #menu-mobile .mobile-auth-nav button {
+		width: 100%;
+		font-size: 13px;
 	}
 	header.open-menu #menu-mobile li {
 		text-align: center;
@@ -251,11 +272,116 @@
 		height: 40px;
 		color: #fff;
 		outline: 0;
+		z-index: 31;
+	}
+	header.open-menu #input-search-mobile {
+		display: none;
 	}
 	header.open-search #input-search-mobile {
 		top: 0;
 	}
 	header.open-search #logotipo {
 		z-index: 9;
+	}
+	#cart-products {
+		width: 100%;
+		font-size: 11px;
+	}
+	#cart-products thead {
+		display: none;
+	}
+	#cart-products tbody,
+	#cart-products tr {
+		display: block;
+		width: 100%;
+	}
+	#cart-products tr {
+		display: grid;
+		grid-template-columns: 20% 30% 25% 25%;
+		border: 1px solid #ddd;
+		margin-bottom: 8px;
+	}
+	#cart-products th,
+	#cart-products td {
+		padding: 4px 2px;
+		vertical-align: middle;
+		word-break: break-word;
+		width: auto !important;
+		border: 0;
+	}
+	#cart-products td:nth-child(1) {
+		grid-column: 1;
+		grid-row: 1 / span 2;
+	}
+	#cart-products td:nth-child(2) {
+		grid-column: 2 / span 3;
+		grid-row: 1;
+	}
+	#cart-products td:nth-child(3) {
+		grid-column: 2;
+		grid-row: 2;
+	}
+	#cart-products td:nth-child(4) {
+		grid-column: 3;
+		grid-row: 2;
+	}
+	#cart-products td:nth-child(5) {
+		grid-column: 2;
+		grid-row: 3;
+	}
+	#cart-products td:nth-child(6) {
+		grid-column: 3;
+		grid-row: 3;
+	}
+	#cart-products td:nth-child(7) {
+		grid-column: 4;
+		grid-row: 3;
+	}
+	#cart-products img {
+		max-width: 100%;
+		height: auto;
+	}
+	#cart-products .input-group {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+	#cart-products .input-group-btn {
+		display: flex;
+		align-items: center;
+	}
+	#cart-products .input-group .form-control {
+		min-width: 0;
+		height: 34px;
+		padding: 2px;
+		text-align: center;
+	}
+	#cart-products .input-group .btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 28px;
+		height: 34px;
+		padding: 4px 2px;
+	}
+	#calculo-de-frete .box-outline-grey {
+		padding: 0 10px 16px;
+	}
+	#calculo-de-frete .input-group.col-xs-4 {
+		width: 100%;
+	}
+	#calculo-de-frete .input-group input {
+		height: 38px;
+		font-size: 16px;
+	}
+	#calculo-de-frete .input-group button {
+		height: 38px;
+		white-space: nowrap;
+	}
+	#calculo-de-frete > .col-sm-8,
+	#calculo-de-frete > .col-sm-4 {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }

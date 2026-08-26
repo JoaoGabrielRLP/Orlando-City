@@ -3,7 +3,7 @@
 	<head>
 
 		<meta charset="utf-8">
-		<meta name="viewport" content="width:device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Orlando City</title>
 		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="lib/owl.carousel/owl-carousel/owl.carousel.css">
@@ -22,6 +22,7 @@
 			<div id="menu-mobile-mask" class="visible-xs"></div>
 
 			<div id="menu-mobile" class="visible-xs">
+				<img class="menu-mobile-logo" src="img/orlando-logo.png" alt="Logotipo">
 				
 				<ul class="list-unstyled">
 					<li><a href="index">Home</a></li>
@@ -32,6 +33,24 @@
 					<li><a href="shop">Shop</a></li>
 				</ul>
 
+				<ul class="list-unstyled mobile-auth-nav">
+					<li class="auth-guest">
+						<button type="button" class="btn btn-sm btn-roxo btn-abrir-login">Entrar</button>
+						<button type="button" class="btn btn-sm btn-roxo btn-abrir-cadastro">Cadastrar</button>
+					</li>
+					<li class="auth-logado dropdown" style="display:none;">
+						<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-user"></i> <span class="auth-nome-usuario"></span> <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#" class="btn-meus-pedidos">Meus Pedidos</a></li>
+							<li><a href="#" class="btn-editar-dados">Editar Dados</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#" class="btn-logout">Sair</a></li>
+						</ul>
+					</li>
+				</ul>
+
 				<div class="bar-close">
 					<button type="button" class="btn btn-close"><i class="fa fa-close"></i></button>
 				</div>
@@ -40,6 +59,24 @@
 			
 			<div class="container">
 				<img id="logotipo" src="img/orlando-logo.png" alt="Logotipo">
+
+				<ul class="list-unstyled pull-right" id="auth-nav">
+					<li class="auth-guest">
+						<button type="button" class="btn btn-sm btn-roxo btn-abrir-login">Entrar</button>
+						<button type="button" class="btn btn-sm btn-roxo btn-abrir-cadastro">Cadastrar</button>
+					</li>
+					<li class="auth-logado dropdown" style="display:none;">
+						<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-user"></i> <span class="auth-nome-usuario"></span> <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li><a href="#" class="btn-meus-pedidos">Meus Pedidos</a></li>
+							<li><a href="#" class="btn-editar-dados">Editar Dados</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#" class="btn-logout">Sair</a></li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 
 			<div class="header-black">
@@ -50,31 +87,6 @@
 				
 					<button id="btn-bars" type="button"><i class="fa fa-bars"></i></button>
 					<button id="btn-search" type="button"><i class="fa fa-search"></i></button>
-
-					<ul class="pull-right">
-						<li class="club-01"><a href="#"></a></li>
-						<li class="club-02"><a href="#"></a></li>
-						<li class="club-03"><a href="#"></a></li>
-						<li class="club-04"><a href="#"></a></li>
-						<li class="club-05"><a href="#"></a></li>
-						<li class="club-06"><a href="#"></a></li>
-						<li class="club-07"><a href="#"></a></li>
-						<li class="club-08"><a href="#"></a></li>
-						<li class="club-09"><a href="#"></a></li>
-						<li class="club-10"><a href="#"></a></li>
-						<li class="club-11"><a href="#"></a></li>
-						<li class="club-12"><a href="#"></a></li>
-						<li class="club-13"><a href="#"></a></li>
-						<li class="club-14"><a href="#"></a></li>
-						<li class="club-15"><a href="#"></a></li>
-						<li class="club-16"><a href="#"></a></li>
-						<li class="club-17"><a href="#"></a></li>
-						<li class="club-18"><a href="#"></a></li>
-						<li class="club-19"><a href="#"></a></li>
-						<li class="club-20"><a href="#"></a></li>
-						<li class="club-21"><a href="#"></a></li>
-						<li class="club-22"><a href="#"></a></li>
-					</ul>
 
 				</div>
 
